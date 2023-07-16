@@ -1,0 +1,47 @@
+.container {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "main"
+    "footer";
+  grid-template-rows: auto 60px;
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    display: flex;
+    justify-content: center;
+
+    .content {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1rem 0;
+      gap: 1rem;
+
+      .input-task {
+        width: 100%;
+        .add-task-button {
+          color: #121212;
+          background: #37ff14;
+          border: 1px solid #37ff14;
+        }
+      }
+
+      .list {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+  }
+}

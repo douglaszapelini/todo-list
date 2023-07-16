@@ -1,0 +1,50 @@
+.task {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 50px;
+  border: solid 1px #000;
+  border-radius: 0.25rem;
+  padding: 0.3rem;
+  background-color: #edf1f5dc;
+  color: #000;
+  gap: 0.25rem;
+
+  ::ng-deep .p-inputtext {
+    background: #74747436;
+    color: #000;
+    border-color: #00000053;
+  }
+
+  .confirm-edit-task-button {
+    color: #121212;
+    background: #37ff14;
+    border: 1px solid #37ff14;
+  }
+
+  .inputs-info,
+  .buttons {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .inputs-info {
+    padding-left: 0.38rem;
+    .description {
+      overflow-wrap: anywhere;
+    }
+  }
+
+  ::ng-deep .p-checkbox-box:not(.p-highlight) {
+    background: #fff;
+    border-color: #ba68c8;
+  }
+}
+
+.task-done {
+  opacity: 0.8;
+  .description {
+    text-decoration-line: line-through;
+  }
+}

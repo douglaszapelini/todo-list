@@ -1,0 +1,46 @@
+<div class="task" ngClass="{{ task.done ? 'task-done' : '' }}">
+  <div class="input-edit-task-description p-inputgroup" *ngIf="isEditing">
+    <input
+      pInputText
+      type="text"
+      [(ngModel)]="task.description"
+      (keydown)="onKeydown($event)"
+    />
+    <button
+      type="button"
+      pButton
+      class="confirm-edit-task-button"
+      icon="pi pi-check"
+      (click)="completeEditTask()"
+      pTooltip="Complete"
+      tooltipPosition="bottom"
+    ></button>
+  </div>
+  <div class="inputs-info" *ngIf="!isEditing">
+    <p-checkbox
+      [(ngModel)]="task.done"
+      [binary]="true"
+      inputId="binary"
+      (onChange)="onCompleteTask()"
+    ></p-checkbox>
+    <div class="description" (click)="!task.done ? (isEditing = true) : null">
+      {{ task.description }}
+    </div>
+  </div>
+  <div class="buttons" *ngIf="!task.done && !isEditing">
+    <p-button
+      icon="pi pi-pencil"
+      (click)="isEditing = true"
+      styleClass="p-button-sm p-button-warning"
+      pTooltip="Edit"
+      tooltipPosition="bottom"
+    ></p-button>
+    <p-button
+      icon="pi pi-trash"
+      (click)="removingTask()"
+      styleClass="p-button-sm p-button-danger"
+      pTooltip="Delete"
+      tooltipPosition="bottom"
+    ></p-button>
+  </div>
+</div>
